@@ -5,6 +5,7 @@ def detect_anagram(word1, word2)
 
   #canonical(word1) == canonical(word2)
   #Insert your solution below here.
+  (word1.downcase.chars - word2.downcase.chars).empty?
 
 end
 
