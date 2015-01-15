@@ -3,8 +3,20 @@
 
 def detect_anagram(word1, word2)
 
-  #canonical(word1) == canonical(word2)
+  check1 = canonical(word1) == canonical(word2)
+
   #Insert your solution below here.
+
+
+  word1s = word1.upcase.split("")
+  word2s = word2.upcase.split("")
+  
+  status = word1s.reduce(true){ |status, letter| 
+    (((i = word2s.find_index(letter)) && word2s.delete_at(i)) != nil) && status
+  }
+  check2 = word2s.empty? ? true & status : false
+
+  check2 && check1
 
 end
 
@@ -18,6 +30,7 @@ end
 def canonical(word)
  
   #insert your solution here
+  word.upcase.split("").map(&:ord).reduce(&:+)
  
 end
 
@@ -27,5 +40,11 @@ p detect_anagram('glean', 'angel') == true
 p detect_anagram('pants', 'pants') == true
 p detect_anagram('CinEmA', 'iceman') == true
 p detect_anagram('defgh8', 'g8hefd') == true
+
+# The previous tests don't account for the following possibilities....
+# If a word has duplicate letters and the other doesn't it should fail.
+p detect_anagram('defgh8', 'g8hhefd') == false
+p detect_anagram('defghh8', 'g8hefd') == false
+p detect_anagram('defghh8', 'g8hhefd') == true
 
 
