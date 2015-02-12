@@ -3,8 +3,7 @@
 
 def detect_anagram(word1, word2)
 
-  #canonical(word1) == canonical(word2)
-  #Insert your solution below here.
+  canonical(word1) == canonical(word2)
 
 end
 
@@ -17,7 +16,9 @@ end
 
 def canonical(word)
  
-  #insert your solution here
+  result_hash = {}
+  word.downcase.split('') { |i| result_hash[i] += 1}
+  result_hash
  
 end
 
