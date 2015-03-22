@@ -5,6 +5,8 @@ def detect_anagram(word1, word2)
 
   #canonical(word1) == canonical(word2)
   #Insert your solution below here.
+  word1.downcase.chars.sort == word2.downcase.chars.sort
+  #(word1.downcase.chars - word2.downcase.chars).empty?
 
 end
 
@@ -18,6 +20,7 @@ end
 def canonical(word)
  
   #insert your solution here
+  #word.downcase.chars.sort
  
 end
 
@@ -27,5 +30,5 @@ p detect_anagram('glean', 'angel') == true
 p detect_anagram('pants', 'pants') == true
 p detect_anagram('CinEmA', 'iceman') == true
 p detect_anagram('defgh8', 'g8hefd') == true
-
+p detect_anagram('bird', 'house') == false
 
