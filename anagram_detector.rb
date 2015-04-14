@@ -2,9 +2,7 @@
 # Implement your solution below
 
 def detect_anagram(word1, word2)
-
-  #canonical(word1) == canonical(word2)
-  word1.downcase.split('').sort == word2.downcase.split('').sort
+  canonical(word1) == canonical(word2)
 end
 
 
@@ -13,11 +11,8 @@ end
 # Then move your solution into the canonical function
 # Modify it in such a way that when called from detect_anagram it results in true or false
 
-
 def canonical(word)
- 
-  #insert your solution here
- 
+  word.downcase.split('').sort
 end
 
 p "Do NOT change any code below this line"
