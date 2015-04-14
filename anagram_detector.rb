@@ -4,8 +4,7 @@
 def detect_anagram(word1, word2)
 
   #canonical(word1) == canonical(word2)
-  #Insert your solution below here.
-
+  word1.downcase.split('').sort == word2.downcase.split('').sort
 end
 
 
