@@ -1,11 +1,24 @@
+# By Kaleb Davis and Bryon Wilkins
 # VERSION ONE
 # Implement your solution below
 
 def detect_anagram(word1, word2)
 
-  #canonical(word1) == canonical(word2)
+  canonical(word1) == canonical(word2)
+=begin  
   #Insert your solution below here.
-
+  	tally1 = Hash.new(0)
+	tally2 = Hash.new(0)
+	word1.downcase!
+	word2.downcase!
+	word1.split("").each do |letter|
+		tally1[letter]+=1
+	end
+	word2.split("").each do |letter|
+		tally2[letter]+=1
+	end
+	tally1.eql? tally2
+=end
 end
 
 
@@ -17,7 +30,7 @@ end
 
 def canonical(word)
  
-  #insert your solution here
+ 	word.downcase.chars.sort()
  
 end
 
