@@ -2,10 +2,9 @@
 # Implement your solution below
 
 def detect_anagram(word1, word2)
-
-  #canonical(word1) == canonical(word2)
+  canonical(word1) == canonical(word2)
   #Insert your solution below here.
-
+  #word1.downcase.chars.sort.eql?(word2.downcase.chars.sort)
 end
 
 
@@ -18,7 +17,7 @@ end
 def canonical(word)
  
   #insert your solution here
- 
+  word.downcase.chars.sort
 end
 
 p "Do NOT change any code below this line"
