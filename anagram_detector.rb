@@ -3,9 +3,7 @@
 #require 'rspec'
 
 def canonical(word)
-  count = Hash.new(0)
-  word.downcase.chars.each { |char| count[char] += 1 }
-  return count
+  word.downcase.chars.sort.join
 end
 
 def detect_anagram(word1, word2)
