@@ -6,7 +6,7 @@ RSpec.describe 'canonical' do
   it 'takes a string and returns an alphanumerically sorted version of it' do
     expected = 'allsy'
     actual = canonical 'sally'
-    expect(expected).to eq(actual)
+    expect(actual).to eq(expected)
   end
 end
 
