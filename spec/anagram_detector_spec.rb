@@ -14,7 +14,7 @@ RSpec.describe 'detect_anagram' do
   it 'outputs true if two words are anagrams (case-insensitive)' do
     expect(detect_anagram('BeeWizard', 'WideZebra')).to be true
   end
-  
+
   it 'outputs false if two words are not anagrams' do
     expect(detect_anagram('CoverMyMeds', 'CoverMyLEDs')).to be false
   end
