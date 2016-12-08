@@ -1,19 +1,15 @@
+require 'prime'
+
+#initialize new array of prime numbers
+primes = Prime.each.to_enum
+
+#initialize new hash to map character to a prime number
+@alphabet = {}
+
+#each ascii character is assigned a unique prime number
+(0..255).each { |asciiNumber| @alphabet[asciiNumber.chr] = primes.next}
+
 # Implement this in such a way that when called below, detect_anagram will result in true or false.
-
-#This method converts the characters in the string to ascii integers and multipl
-#ies them together. Since prime factorization is unique, if the products of the
-#ascii integers are the same then they must use the same characters.
-
-#Update: this algorithm passes the test, but its possible for two strings that a
-#re not anagrams to be out together. For example, if a string has characters 1 a
-#nd 4 as integers and another has 2 and 2, this algorithm consider them anagrams
-#even though they are not by definition.
-
-#Since the lowercase alphabet characters begin at 97, it is unlikey that the exc
-#eption case described above would happen with a given set of lowercase strings.
-#Furthermore, it is less likely to happen as the strings get longer since the sp
-#ecific value of the product would be hard to match with those large numbers.
-
 def canonical(word)
   #set the case for the word to lowercase
   word.downcase!
@@ -22,11 +18,12 @@ def canonical(word)
   product = 1
 
   for i in 0..(word.length - 1)
-    #for each character, convert to ascii number and multiply it to the product
-    product *= word[i].ord
+    #for each character, convert to its unique prime and multiply it to the
+    #product
+    product *= @alphabet[word[i]]
   end
 
-  #Return product
+  #Return unique product for given characters in the word
   product
 end
 
