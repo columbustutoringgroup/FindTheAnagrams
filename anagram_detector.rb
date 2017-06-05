@@ -1,5 +1,7 @@
 # Implement this in such a way that when called below, detect_anagram will result in true or false.
 def canonical(word)
+	word = word.upcase
+	word.split("").sort.to_s #split into characters, sort alphabetically, push back into one string.
 end
 
 def detect_anagram(word1, word2)
