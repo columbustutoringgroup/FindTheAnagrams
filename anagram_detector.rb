@@ -1,9 +1,5 @@
 # Implement this in such a way that when called below, detect_anagram will result in true or false.
 
-# Canonical function
-# sorts string into an array of characters in alphabetical order, makes them lowercase, and rejoins them back into an array
-# if two words are anagrams of one another, the canonical function should result in the same word 
-
 def canonical(word)
   word.chars.sort.join.downcase
 end
