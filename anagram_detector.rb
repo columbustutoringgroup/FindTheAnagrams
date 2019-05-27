@@ -1,8 +1,10 @@
 # Implement this in such a way that when called below, detect_anagram will result in true or false.
 def canonical(word)
+   puts word.downcase.chars.sort
 end
 
 def detect_anagram(word1, word2)
+
   canonical(word1) == canonical(word2)
 end
 
