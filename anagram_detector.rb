@@ -1,6 +1,12 @@
 # Implement this in such a way that when called below, detect_anagram will result in true or false.
 def canonical(word)
-    return word == word.reverse
+    # Change the word to all lowercase, then
+    # separate it into an array of the characters
+    # contained in the string, and finally sort
+    # that array so that any word that's an
+    # anagram of this word will have the same
+    # canonical representation.
+    return word.downcase.chars.sort
 end
 
 def detect_anagram(word1, word2)
