@@ -1,5 +1,18 @@
 # Implement this in such a way that when called below, detect_anagram will result in true or false.
 def canonical(word)
+  letters = Hash.new
+
+  word.each_char do |c|
+    if letters.has_key? c
+      occur = letters[c]
+      occur = occur + 1
+      letters[c] = occur
+    else
+      letters[c.downcase] = 1
+    end
+  end
+
+  letters
 end
 
 def detect_anagram(word1, word2)
