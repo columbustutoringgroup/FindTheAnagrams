@@ -1,5 +1,7 @@
 # Implement this in such a way that when called below, detect_anagram will result in true or false.
 def canonical(word)
+	wordArr = word.split(//)
+	wordArr.sort!.each { |x| x.downcase! }
 end
 
 def detect_anagram(word1, word2)
