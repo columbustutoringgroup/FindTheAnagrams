@@ -1,5 +1,12 @@
 # Implement this in such a way that when called below, detect_anagram will result in true or false.
 def canonical(word)
+  length = word.length
+  word.each_char.with_index(1) { |chr, i|
+    if chr != word[length - i]
+      return false
+    end
+  }
+  return true
 end
 
 def detect_anagram(word1, word2)
