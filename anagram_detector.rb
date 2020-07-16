@@ -1,10 +1,15 @@
 # Implement this in such a way that when called below, detect_anagram will result in true or false.
 def canonical(word)
+  word.upcase.chars.sort
 end
 
 def detect_anagram(word1, word2)
   canonical(word1) == canonical(word2)
 end
+
+p detect_anagram('angel', 'angl') == false
+p detect_anagram('', '') == true
+p detect_anagram('test', 'best') == false
 
 p "Do NOT change any code below this line"
 p detect_anagram('angel', 'glean') == true
