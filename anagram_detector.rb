@@ -1,5 +1,15 @@
 # Implement this in such a way that when called below, detect_anagram will result in true or false.
 def canonical(word)
+  # Alternatively: word.downcase.chars.sort
+  # for a one-liner
+
+  # Create hash with default key values of 0
+  result = Hash.new(0)
+
+  # Build a frequency distribution by character
+  # If two words have the same character frequency distribution, they are anagrams
+  word.downcase.each_char { |char| result[char] += 1 }
+  result
 end
 
 def detect_anagram(word1, word2)
