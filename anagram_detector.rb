@@ -1,5 +1,6 @@
 # Implement this in such a way that when called below, detect_anagram will result in true or false.
 def canonical(word)
+  Hash[word.downcase.split('').group_by{|letter|letter}.map{|k,v|[k,v.size]}]
 end
 
 def detect_anagram(word1, word2)
